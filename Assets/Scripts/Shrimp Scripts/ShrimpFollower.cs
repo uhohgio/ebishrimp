@@ -85,7 +85,7 @@ public class ShrimpFollower : MonoBehaviour {
 
     private Vector3 GetRandomOffset() {
         Vector2 randomCircle = Random.insideUnitCircle * swarmRadius;
-        return new Vector3(randomCircle.x, 0, randomCircle.y);
+        return new Vector3(randomCircle.x, 0, Mathf.Abs(randomCircle.y));
     }
 
     // void OnCollisionEnter(Collision other) {

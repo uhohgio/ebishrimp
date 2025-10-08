@@ -20,6 +20,10 @@ public class CookingAppliance : MonoBehaviour {
     private Queue<GameObject> shrimpInAppliance = new Queue<GameObject>(); 
     public bool isCooking = false; // Whether the appliance is currently cooking shrimp
 
+    void Awake() {
+        shrimpManager = FindObjectOfType<ShrimpManager>();
+    }
+
     void Update() {
         // Replacing this with a call from appliance interaction code - Gio
     }

@@ -26,6 +26,10 @@ public class ApplianceInteraction : MonoBehaviour
 
     [Header("Not Yet Used")]
     public bool isDoorOpen; // if you implement opening functionality
+
+    private void Awake() {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
     
      private void Start()
     {
