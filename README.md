@@ -128,3 +128,10 @@ Genshrimp Shrimpact
 You’re telling me a shrimp fried this rice?[^1]
 
 [^1]:  We need this one no matter what…
+
+# Most Up-To-Date Official Documentation
+
+*NOTE: These docs are currently under development, but still hold the most information.*
+
+📎https://docs.google.com/document/d/1O2gDnHEanvHC_tfeFS59FHc8d7Si-940SkPgaRCQXas/edit?usp=sharing
+
