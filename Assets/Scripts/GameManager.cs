@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
     {
         cookedShrimpCount = change;
     }
-
+ 
     // Call this method when the player's score is updated
     public void UpdateHighScore(int currentScore)
     {

@@ -650,6 +650,7 @@ GameObject:
   - component: {fileID: 538964924}
   - component: {fileID: 538964923}
   - component: {fileID: 538964926}
+  - component: {fileID: 538964927}
   m_Layer: 5
   m_Name: buttonTop
   m_TagString: Untagged
@@ -797,6 +798,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &538964927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538964921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14cd4f208c5de4b408bbee58ef377521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customCursorHover: {fileID: 2800000, guid: 1b421fd56aa6a7c41a67f7494048c84a, type: 3}
 --- !u!1 &668547355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,6 +1739,7 @@ MonoBehaviour:
   shrimpCounter: {fileID: 0}
   time: {fileID: 0}
   score: {fileID: 1550547237}
+  highScore: {fileID: 0}
 --- !u!114 &1550547237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1907,6 +1922,7 @@ GameObject:
   - component: {fileID: 1608734723}
   - component: {fileID: 1608734722}
   - component: {fileID: 1608734725}
+  - component: {fileID: 1608734726}
   m_Layer: 5
   m_Name: buttonBottom
   m_TagString: Untagged
@@ -2054,6 +2070,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1608734726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608734720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14cd4f208c5de4b408bbee58ef377521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customCursorHover: {fileID: 2800000, guid: 1b421fd56aa6a7c41a67f7494048c84a, type: 3}
 --- !u!1 &1709694195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,6 +2096,7 @@ GameObject:
   - component: {fileID: 1709694198}
   - component: {fileID: 1709694197}
   - component: {fileID: 1709694200}
+  - component: {fileID: 1709694201}
   m_Layer: 5
   m_Name: buttonMiddle (1)
   m_TagString: Untagged
@@ -2214,6 +2244,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1709694201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709694195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14cd4f208c5de4b408bbee58ef377521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customCursorHover: {fileID: 2800000, guid: 1b421fd56aa6a7c41a67f7494048c84a, type: 3}
 --- !u!1 &1763681071
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,6 +2304,7 @@ GameObject:
   - component: {fileID: 1887466745}
   - component: {fileID: 1887466744}
   - component: {fileID: 1887466747}
+  - component: {fileID: 1887466748}
   m_Layer: 5
   m_Name: buttonMiddle
   m_TagString: Untagged
@@ -2408,6 +2452,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1887466748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887466742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14cd4f208c5de4b408bbee58ef377521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customCursorHover: {fileID: 2800000, guid: 1b421fd56aa6a7c41a67f7494048c84a, type: 3}
 --- !u!1 &1892061706
 GameObject:
   m_ObjectHideFlags: 0
