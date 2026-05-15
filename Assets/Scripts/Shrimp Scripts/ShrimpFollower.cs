@@ -18,6 +18,14 @@ public class ShrimpFollower : MonoBehaviour {
     public float wobbleIntensity = 0.1f;
     public float wobbleSpeed = 2f;
 
+    [Header("Ground Interaction")]
+    public float groundHeight = -1.232769f;        // Y-level of ground
+    public float squashAmount = 0.4f;      // How much to squash
+    public float squashSpeed = 8f;         // How fast it squashes
+    public LayerMask groundMask;
+
+
+
     private Vector3 velocity;
     private Vector3 targetOffset;
 
@@ -64,10 +72,57 @@ public class ShrimpFollower : MonoBehaviour {
 
         velocity = Vector3.Lerp(velocity, (targetPosition - transform.position).normalized * moveSpeed, Time.deltaTime / positionSmoothness);
         transform.position += velocity * Time.deltaTime;
-        
-        
 
-        Quaternion wobble = Quaternion.Euler(
+        // // Immediately clamp Y so next frame starts above ground
+        // if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.down, out RaycastHit hit, 1f, groundMask))
+        // {
+        //     if (transform.position.y < hit.point.y)
+        //     {
+        //         Vector3 p = transform.position;
+        //         p.y = hit.point.y;
+        //         transform.position = p;
+        //     }
+        // }
+
+        // --- MOVEMENT & ROTATION (unchanged above this point) ---
+
+       Ray ray = new Ray(transform.position + Vector3.up * 0.5f, Vector3.down);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, 1f, groundMask))
+        {
+            float distanceToGround = hit.distance;
+
+            // Clamp position BEFORE squash
+            if (transform.position.y < hit.point.y)
+            {
+                Vector3 p = transform.position;
+                p.y = hit.point.y;
+                transform.position = p;
+            }
+
+            // Squash when close
+            if (distanceToGround < 0.1f)
+            {
+                float t = Mathf.InverseLerp(0.1f, 0f, distanceToGround);
+                float squash = Mathf.Lerp(1f, squashAmount, t);
+
+                transform.localScale = Vector3.Lerp(
+                    transform.localScale,
+                    new Vector3(1f, squash, 1f),
+                    Time.deltaTime * squashSpeed
+                );
+            }
+            else
+            {
+                transform.localScale = Vector3.Lerp(
+                    transform.localScale,
+                    Vector3.one,
+                    Time.deltaTime * squashSpeed
+                );
+            }
+        }
+
+         Quaternion wobble = Quaternion.Euler(
             Mathf.Sin(Time.time * wobbleSpeed) * wobbleIntensity,
             Mathf.Sin(Time.time * wobbleSpeed * 1.5f) * wobbleIntensity,
             0
@@ -81,6 +136,8 @@ public class ShrimpFollower : MonoBehaviour {
         if (Random.value < 0.01f) {
             targetOffset = GetRandomOffset();
         }
+
+
     }
 
     private Vector3 GetRandomOffset() {
