@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         cookedShrimpCount = 0;
         ticking  = true;
-        LoadLevel("KitchenTIled");
+        LoadLevel("KitchenTemplate");
         Time.timeScale = 1;
     }
 
