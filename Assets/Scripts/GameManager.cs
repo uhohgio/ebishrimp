@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int score; // holds the current score of the player
     public int highScore = 0; // variable to store the high score
     private const string HIGH_SCORE_KEY = "highScore"; // Key for PlayerPrefs
+    public string currentMap = "KitchenTemplate"; // the title of the scene containing the map used in gameplay
    
 
     void FixedUpdate()
@@ -90,7 +91,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         cookedShrimpCount = 0;
         ticking  = true;
-        LoadLevel("KitchenTemplate");
+        LoadLevel(currentMap);
         Time.timeScale = 1;
     }
 
