@@ -7,12 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Marble_Tile_Albedo Variant
+  m_Name: KitchenColor Variant 1
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: 072c4f92a1f3b3a42878846cda16187c, type: 2}
+  m_Parent: {fileID: 2100000, guid: afc51e705e86a2545b3685f50a8f9d19, type: 2}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -25,10 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats:
-    - _GlossMapScale: 0
-    - _Glossiness: 0
-    - _SmoothnessTextureChannel: 1
+    m_Floats: []
     m_Colors:
-    - _Color: {r: 0.381132, g: 0.3052207, b: 0.2754218, a: 1}
+    - _Color: {r: 0.93207544, g: 0.57338154, b: 0.5399003, a: 1}
   m_BuildTextureStacks: []

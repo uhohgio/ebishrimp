@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager : MonoBehaviour
 {
     // to access the game manager in other scripts simply reference it with:
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     public int score; // holds the current score of the player
     public int highScore = 0; // variable to store the high score
     private const string HIGH_SCORE_KEY = "highScore"; // Key for PlayerPrefs
+    [SerializeField] private string[] mapList = {"KitchenTemplate", "KitchenTemplate 1", "KitchenTemplate 2"};
     public string currentMap = "KitchenTemplate"; // the title of the scene containing the map used in gameplay
    
 
@@ -91,6 +93,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         cookedShrimpCount = 0;
         ticking  = true;
+        currentMap = randomMapRotation();
         LoadLevel(currentMap);
         Time.timeScale = 1;
     }
@@ -140,6 +143,13 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt(HIGH_SCORE_KEY, highScore);
             PlayerPrefs.Save(); // Ensure immediate saving
         }
+    }
+
+    private string randomMapRotation()
+    {
+        int mapChoice = Random.Range(0, mapList.Length);
+        print(mapChoice);
+        return mapList[mapChoice];
     }
 
 
