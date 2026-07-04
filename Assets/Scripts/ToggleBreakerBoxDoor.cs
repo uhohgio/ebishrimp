@@ -52,7 +52,8 @@ public class ToggleBreakerBoxDoor : MonoBehaviour
 
                 
                 if (breakerBoxIsOpen){
-                    turnPowerOnMessage.setActive();
+                    openBreakerBoxMessage.SetActive(false);
+                    flipSwitchMessage.SetActive(true);
                     // pressing F closes the breaker box door
                     if (Input.GetKeyDown(KeyCode.F)) {
                         breakerDoor.Play(closingDoor, 0, 1f - t);
@@ -63,7 +64,8 @@ public class ToggleBreakerBoxDoor : MonoBehaviour
                         PowerOn(); // currently does nothing but should handle the act of turning the power back on
                     }
                 } else {
-                    openBreakerBoxMessage.setActive();
+                    flipSwitchMessage.SetActive(false);
+                    openBreakerBoxMessage.SetActive(true);
                     // pressing F opens the breaker box door
                     if (Input.GetKeyDown(KeyCode.F)) {
                         breakerDoor.Play(openingDoor, 0, 1f - t);
