@@ -10,6 +10,7 @@ public class KrillinIndicator : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject promptMessage; // the press e to interact message that pops up
     [SerializeField] private GameObject busyMessage; // tells the user that the appliance is busy
+    [SerializeField] private GameObject needPowerMessage; // tells the user they need power to use the appliance
     [Header("Connected Managers")]
     [SerializeField] private CookingAppliance chef;
     
@@ -34,16 +35,23 @@ public class KrillinIndicator : MonoBehaviour
 
         if (nearbyAppliance != null) {
             // Call the specific appliance to see if it's cooking
-            if (nearbyAppliance.currentlyCooking)
+            if (nearbyAppliance.isElectric && nearbyAppliance.levelManager.powerOutage)
                 {
-                    // busy appliance
-                    busyMessage.gameObject.SetActive(true);
-                    promptMessage.gameObject.SetActive(false);
-                } else
-                {
-                    // can press F
-                    promptMessage.gameObject.SetActive(true);
-                    busyMessage.gameObject.SetActive(false);
+                    Debug.Log("Turn on the Power."); // replace this with the prompt
+                    needPowerMessage.gameObject.SetActive(true);
+                } else {
+                    needPowerMessage.gameObject.SetActive(false);
+                    if (nearbyAppliance.currentlyCooking)
+                        {
+                            // busy appliance
+                            busyMessage.gameObject.SetActive(true);
+                            promptMessage.gameObject.SetActive(false);
+                        } else
+                        {
+                            // can press F
+                            promptMessage.gameObject.SetActive(true);
+                            busyMessage.gameObject.SetActive(false);
+                        }
                 }
         }
         else

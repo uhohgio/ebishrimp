@@ -31,6 +31,7 @@ public class FridgeSpawner : MonoBehaviour
             // Wait for a random interval
             // float waitTime = Random.Range(spawnIntervalMin, spawnIntervalMax); // old implementation
             float waitTime = randomizerTime(GameManager.Instance.difficulty); // new implementation (w/difficulty)
+            // ^ in testing this gives an error because the GameManager does not exist when the game is in pieces
             yield return new WaitForSeconds(waitTime);
 
             // Open the fridge door

@@ -24,11 +24,16 @@ public class ApplianceInteraction : MonoBehaviour
     public Color cookingColor = Color.red; // Color while cooking
     public Color idleColor = Color.white;  // Color when idle
 
+    [Header("Level-Specific Content")]
+    public ThisLevelManager levelManager; 
+    public bool isElectric;
+
     [Header("Not Yet Used")]
     public bool isDoorOpen; // if you implement opening functionality
 
     private void Awake() {
         audioManager = FindObjectOfType<AudioManager>();
+        levelManager = FindObjectOfType<ThisLevelManager>();
     }
     
      private void Start()
@@ -83,6 +88,11 @@ public class ApplianceInteraction : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (other.CompareTag("Invisible") && isElectric && levelManager.powerOutage)
+        {
+            Debug.Log("Turn the power on");
+            return;
+        }
         // Ensure the player presses F and the appliance isn't already cooking
         if (other.CompareTag("Invisible") && Input.GetKeyDown(KeyCode.F) && !chef.isCooking)
         {

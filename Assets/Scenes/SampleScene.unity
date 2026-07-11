@@ -8618,6 +8618,11 @@ MonoBehaviour:
   difficulty: 0
   score: 0
   highScore: 0
+  mapList:
+  - KitchenTemplate
+  - KitchenTemplate 1
+  - KitchenTemplate 2
+  currentMap: KitchenTemplate
 --- !u!4 &1708254463
 Transform:
   m_ObjectHideFlags: 0
