@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         cookedShrimpCount = 0;
         ticking  = true;
-        currentMap = randomMapRotation();
+        // currentMap = randomMapRotation(); // taken in and out for testing
         LoadLevel(currentMap);
         Time.timeScale = 1;
     }

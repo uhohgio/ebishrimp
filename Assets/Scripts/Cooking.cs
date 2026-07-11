@@ -15,6 +15,7 @@ public class CookingAppliance : MonoBehaviour {
     public GameObject sillySrimp; // the UI object that shows when a shrimp has been cooked
     public GameObject sillySrimpCanvas;
     public List<GameObject> srimps = new List<GameObject>();
+
     
     // Queue of shrimp currently in the appliance
     private Queue<GameObject> shrimpInAppliance = new Queue<GameObject>(); 
